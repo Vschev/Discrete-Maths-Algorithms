@@ -8,15 +8,10 @@ An output is a string of numbers showing a possible eulerian path (first one fou
 Sample input:
 
 4 5
-
 1 2
-
 2 1
-
 2 3
-
 3 4
-
 4 2
 
 Sample output:
