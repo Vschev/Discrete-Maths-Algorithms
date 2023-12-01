@@ -1,4 +1,4 @@
-Eulerian way.py - this file contains an implementation of an algorithm finding the Eulerian path in a graph, if it exists.
+Eulerian way.py - this file contains an implementation of an algorithm finding the Eulerian path in a graph, if it exists, which is used in several genome assembly algorithms.
 Eulerian path goes through all of the edges in the graph, and only once.
 An input for this file is a list of strings representing a graph.
 The first string contains two numbers (whitespace separated): numbers of the vertices and edges in the graph.
