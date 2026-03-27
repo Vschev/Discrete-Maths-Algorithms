@@ -1,3 +1,4 @@
+
 Eulerian way.py - this file contains an implementation of an algorithm finding the Eulerian path in a graph, if it exists, which is used in several genome assembly algorithms.
 Eulerian path goes through all of the edges in the graph, and only once.
 An input for this file is a list of strings representing a graph.
@@ -26,6 +27,13 @@ It also requires two sequences and the third string of two numbers: penalties fo
 
 Global_blosum.py - a protein aligner using the BLOSUM62 score matrix for amino acids (presented as a dictionary of scores within the script, modifiable).
 Takes two protein sequences as its input and returns the best global alignment
+
+Promoter prediction.py
+
+This script utilizes the Viterbi algorithm to predict promoter regions in the given DNA sequence.
+A sequence of DNA nucleotides is taken as an input (a string consisting of 'A', 'C', 'G', 'T' characters, caps only).
+The sequence of P/N characters is returned as an output, for promoter and non-promoter loci, respectively.
+Model parameters are modifiable within the script (probability to emit A/C/G/T from P and non-P states; chances to stay at P, stay at NP or change from one to another).
 
 RNA predictor.py
 
