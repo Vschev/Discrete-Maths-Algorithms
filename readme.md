@@ -16,8 +16,19 @@ Sample input:
 
 Sample output:
 
-RNA predictor.py
 1 2 3 4 2
+
+Global.py - a DNA aligner, uses the Needleman-Wunsch algorithm for the global alignment. Takes two DNA sequences (caps only) as two strings and returns an alignment.
+Scores for gaps/mismatches/matches can be modified within the script.
+
+Global_affinity.py - this one uses an "affine gap" model, in which the penalty for a gap opening is different from lengthening it.
+It also requires two sequences and the third string of two numbers: penalties for an opening and the continuation.
+
+Global_blosum.py - a protein aligner using the BLOSUM62 score matrix for amino acids (presented as a dictionary of scores within the script, modifiable).
+Takes two protein sequences as its input and returns the best global alignment
+
+RNA predictor.py
+
 This file predicts the optimal secondary structure of an RNA molecule based on dynamic programming.
 It tries to maximise an amount of complementary interactions that the molecule has with itself.
 Taking RNA sequence as an input (caps only), it returns the sequence of characters showing GC and AT interactions as parentheses and unpaired bases as dots.
