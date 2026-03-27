@@ -1,10 +1,9 @@
-# put your python code here
 seq1 = input()
 seq2 = input()
 out1, out2 = "", ""
 
 
-#скоры
+#Matrix scores
 
 matched = 1
 mismatched = -1
@@ -12,7 +11,7 @@ fines = input().split()
 gap_open = int(fines[0])
 gap = int(fines[1])
 
-#инициализация
+#Initialisation
 
 main = [[0 for j in range(len(seq1)+1)] for i in range(len(seq2)+1)]
 upper = [[0 for j in range(len(seq1)+1)] for i in range(len(seq2)+1)]
@@ -41,8 +40,7 @@ main[0][0] = 0
 upper[0][0] = float('-inf')
 lower[0][0] = float('-inf')
 
-#заполняет матрицу чисел
-#проставляет путевые метки
+#fills the matrix & puts "footsteps"
  
 for row in range(1, len(main)):                   
     for col in range(1, len(main[row])):
@@ -79,7 +77,7 @@ for row in range(1, len(main)):
         elif main[row][col] == lower[row][col]:
             mainways[row][col] = 'down'
 
-#возвращается по меткам
+#retraces the footsteps to the beginning
            
 x, y = len((main)[0]) - 1, len(main) - 1
 current = "main"
@@ -107,7 +105,7 @@ while x!=0 and y!=0:
         out2 += "-"
         out1 += seq1[x-1]
         x -= 1     
-#добивает гэпы
+#assigns gaps
         
 if x == 0:
     while y!=0:
@@ -120,7 +118,7 @@ elif y == 0:
         out1 += seq1[x-1]
         x -= 1
 
-#переворачивает строки
+#reverts the strings
         
 out1 = out1[::-1]
 out2 = out2[::-1]
