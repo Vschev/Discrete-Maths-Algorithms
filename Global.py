@@ -1,16 +1,15 @@
-# put your python code here
 seq1 = input()
 seq2 = input()
 out1, out2 = "", ""
 
 
-#скоры
+#Matrix scores
 
 matched = 1
 mismatched = -1
 gap = -2
 
-#инициализация
+#Initialisation
 
 matrix = [[0 for j in range(len(seq1)+1)] for i in range(len(seq2)+1)]
 matways = [['' for j in range(len(seq1)+1)] for i in range(len(seq2)+1)]
@@ -23,7 +22,7 @@ for i in range(len(matrix)):
 
 
 
-#заполняет матрицу чисел
+#fills the matrix
     
 for row in range(1, len(matrix)):                   
     for col in range(1, len(matrix[row])):
@@ -36,7 +35,7 @@ for row in range(1, len(matrix)):
         best = max(left,up,diag)
         matrix[row][col] = best
 
-        #проставляет путевые метки
+        #puts "footsteps"
         
         if diag == best:                            
             matways[row][col] = "diag"
@@ -45,7 +44,7 @@ for row in range(1, len(matrix)):
         if left == best:
             matways[row][col] = "left"
 
-#возвращается по меткам
+#retraces the footsteps to the beginning
             
 x, y = len((matrix)[0]) - 1, len(matrix) - 1
 
@@ -63,7 +62,7 @@ while x!=0 and y!=0:
         out2 += "-"
         out1 += seq1[x-1]
         x -= 1     
-#добивает гэпы
+#assigns gaps
         
 if x == 0:
     while y!=0:
@@ -76,7 +75,7 @@ elif y == 0:
         out1 += seq1[x-1]
         x -= 1
 
-#переворачивает строки
+#reverts the strings
         
 out1 = out1[::-1]
 out2 = out2[::-1]
